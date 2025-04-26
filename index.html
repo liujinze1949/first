@@ -1,45 +1,282 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="zh-CN"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>人民九中</title> 
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1949的个人介绍</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+        /* 头部样式 */
+        .header {
+            background: #cd0f14;
+            padding: 10px 0;
+        }
 
-    .container {
-      width: 80%;
-      margin: 50px auto;
-      background-color: white;
-      padding: 20px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
+        .logo {
+            width: 150px;
+            height: 60px;
+        }
 
-    p {
-      line-height: 1.6;
-      color: #666;
-    }
-  </style>
-</head>
+        .nav-top {
+            color: #fff;
+            font-size: 14px;
+        }
 
-<body>
-  <div class="container">
-    <h1>1949的个人介绍</h1>
-    <p>1949是一个具有特殊意义的名字。它或许象征着一个伟大时代的开端，见证了历史的重大转折。</p>
-    <p>他/她可能有着丰富的人生经历，在不同的领域中不断探索、成长。在工作上，他/她兢兢业业，为了自己的事业目标不懈努力，在[具体工作领域]取得了不少成绩。</p>
-    <p>生活中的1949，热爱生活，喜欢[列举兴趣爱好，如阅读、旅行等]。他/她以积极乐观的态度面对生活中的挑战，用温暖和善良感染着身边的人。</p>
-  </div>
-</body>
+        .nav-top a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-</html>
+        .nav-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-list li {
+            padding: 0 1885px;
+        }
+
+        .nav-list a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* 主体内容 */
+        .main-content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 主新闻区 */
+        .main-news {
+            flex: 3;
+            margin-right: 20px;
+            min-width: 300px;
+        }
+
+        .news-section {
+            margin-bottom: 30px;
+        }
+
+        .news-title {
+            border-left: 4px solid #cd0f14;
+            padding-left: 10px;
+            margin: 20px 0;
+            font-size: 20px;
+        }
+
+        .news-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .news-img {
+            width: 200px;
+            min-height: 120px;
+            margin-right: 15px;
+        }
+
+        /* 侧边栏 */
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* 图片新闻 */
+        .photo-news {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .photo-item {
+            text-align: center;
+        }
+
+        .photo-img {
+            width: 100%;
+            min-height: 100px;
+        }
+
+        /* 底部 */
+        .footer {
+            background: #BC0000;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+.download-item {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            background: #f5f5f5;
+        }
+
+        .red-line {
+            color: #cd0f14;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .file-name {
+            flex: 1;
+            color: #333;
+            margin-right: 15px;
+        }
+
+        .download-btn {
+            background: #cd0f14;
+            color: white;
+            padding: 9px 12px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background: #a30c0f;
+        }
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-list li {
+                padding: 10px 0;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .main-news {
+                margin-right: 0;
+            }
+
+            .news-item {
+                flex-direction: column;
+            }
+
+            .news-img {
+                width: 100%;
+                min-height: 200px;
+                margin-bottom: 10px;
+            }
+        }
+    </style> 
+    </head> 
+    <body> 
+        <header class="header"> 
+            <div class="header-content"> 
+                <img src="https://i.imgs.ovh/2025/04/24/cmItp.png" alt="cmItp.png" alt="cmYYU.png" border="0" width="200px"> 
+                <nav class="nav-top"> <a href="#">投稿</a> | <a href="#">建议</a> | <a href="#">敬请期待...</a> 
+                </nav> 
+            </div> 
+        </header> 
+        <div class="main-content"> 
+            <main class="main-news"> 
+                <section class="news-section"> 
+                    <h2 class="news-title">要闻</h2> 
+                    <div class="news-item"> 
+                        <img class="news-img" src="https://i.imgs.ovh/2025/04/26/fFNHd.jpeg" alt="fFNHd.jpeg"> 
+                        <div> 
+                            <h3><a href="#">书法比赛是否为圈钱工具？</a></h3> 
+                            <p>之前所说的奖品是否已经销声匿迹？还是黄粱一梦？</p> 
+                        </div> 
+                    </div> <!-- 更多新闻项 --> 
+                </section> 
+                <section class="photo-news"> 
+                    <div class="photo-item"> 
+                        <img class="photo-img"  src="https://i.imgs.ovh/2025/04/24/cmpec.jpeg" alt="cmpec.jpeg" border="0"> 
+                        <p>5月1号劳动节</p> 
+                        <a>致敬每一位努力奋斗的平凡人</a>
+                    </div> <!-- 更多图片新闻项 --> 
+                </section> 
+            </main> 
+            <aside class="sidebar"> 
+                <section class="news-section"> 
+                    <h2 class="news-title">热门新闻</h2> 
+                    <ul> 
+                        <li><a>4月27号上学</a></li> 
+                        <li><a>5.1放假</a></li> <!-- 更多热门新闻 --> 
+                    </ul> 
+                </section> 
+            </aside> 
+            <aside class="sidebar"> 
+                <section class="news-section"> 
+                    <h2 class="news-title">pdf文件</h2> 
+                    <ul> 
+                <div class="download-item">
+                    <span class="red-line">丨</span>
+                    <span class="file-name">毛泽东选集 第一卷</span>
+                    <a href="https://dl-c.feijix.com/storage/files/2025/04/26/9/5013644249/1745677515117561.gz?t=680cff5a&rlimit=20&us=Zok0qjaRjS&sign=9913abf355481156410675f60d784468&download_name=%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%281991%E7%89%88%291.pdf" download class="download-btn">下载</a>
+                </div>
+
+                <div class="download-item">
+                    <span class="red-line">丨</span>
+                    <span class="file-name">毛泽东选集 第二卷</span>
+                    <a href="https://dl-c.feijix.com/storage/files/2025/04/26/9/5013644249/1745677523823448.gz?t=680cffc4&rlimit=20&us=PgQgEtUDPe&sign=c02a01d6e921f80a9176b8fea7436614&download_name=%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%281991%E7%89%88%292.pdf" download class="download-btn">下载</a>
+                </div>
+
+                <div class="download-item">
+                    <span class="red-line">丨</span>
+                    <span class="file-name">毛泽东选集 第三卷</span>
+                    <a href="https://dl-c.feijix.com/storage/files/2025/04/26/9/5013644249/1745677530383129.gz?t=680d0022&rlimit=20&us=tDwuVhhnRr&sign=4e017cc01c4ac1ecc951b7362aa541c7&download_name=%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%281991%E7%89%88%293.pdf" download class="download-btn">下载</a>
+                </div>
+                
+                <div class="download-item">
+                    <span class="red-line">丨</span>
+                    <span class="file-name">毛泽东选集 第四卷</span>
+                    <a href="https://dl-c.feijix.com/storage/files/2025/04/26/9/5013644249/1745677537426732.gz?t=680d00bc&rlimit=20&us=RRRvNsMx7Y&sign=b46708ddb0b5d2685d8c0f50795afd4c&download_name=%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%281991%E7%89%88%294.pdf" download class="download-btn">下载</a>
+                </div>
+                
+                <div class="download-item">
+                    <span class="red-line">丨</span>
+                    <span class="file-name">毛泽东选集 第五卷</span>
+                    <a href="https://dl-c.feijix.com/storage/files/2024/02/15/8/5059828/1707961649309829.gz?t=680d01b8&rlimit=20&us=FfarkVMO6n&sign=3ecf403039ffaaeec525fbc65d87df84&download_name=%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%20%E7%AC%AC%E4%BA%94%E5%8D%B7%E3%80%90%E6%96%87%E5%AD%97%E7%89%88%E3%80%91%20%28%E4%BD%9A%E5%90%8D%29%20%28Z-Library%29.pdf" download class="download-btn">下载</a>
+                </div>
+            </section>
+        </aside>
+                    </ul> 
+                </section> 
+            </aside> 
+        </div>
+        <footer class="footer"> 
+            <p>人民九中</p> 
+            <p>People_1949@outlook.com</p> 
+        </footer>  
+    </body>
+  </html>
